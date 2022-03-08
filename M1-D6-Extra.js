@@ -89,12 +89,12 @@ console.log(newWords);
 */
 function deleteOne(str, bool) {
   if (bool === true) {
-    return str.slice(1, 0);
+    return str.substring(1);
   } else {
-    return str.slice(0, -1);
+    return str.substring(0, str.length - 1);
   }
 }
-let oneToDelete = deleteOne("delete", false);
+let oneToDelete = deleteOne("delete", true);
 console.log(oneToDelete);
 /* EXERCISE 5
    Write a function called onlyLetters which receives a string as a parameter and returns it removing all the digits.
@@ -164,15 +164,30 @@ console.log(whatDayIsIt());
         values: [3, 3, 4]
     }
 */
-
+let rollTheDices = function (num) {};
 /* EXERCISE 9
    Write a function called howManyDays which receives a date as a parameter and returns the number of days passed since that date.
 */
+let howManyDays = function (date) {
+  let current = new Date(date.getTime());
+  let previous = new Date(date.getFullYear(), 0, 1);
+  return Math.ceil((current - previous + 1) / 86400000);
+};
+console.log(howManyDays(new Date(2022, 8, 3)));
 
 /* EXERCISE 10
    Write a function called isTodayMyBirthday which should return true if today's your birthday, false otherwise.
 */
-
+const isTodayMyBirthday = function (today) {
+  today = new Date();
+  let myBirthDay = new Date(1992, 06, 01);
+  if (today === myBirthDay) {
+    return true;
+  } else {
+    return false;
+  }
+};
+console.log(isTodayMyBirthday(new Date(2022, 08, 03)));
 // JS Arrays & Objects
 // NOTE: the movies array used in some exercises is defined at the end of this file
 

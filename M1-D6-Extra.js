@@ -268,7 +268,7 @@ let tree = function (height) {
   let space = "";
   for (let i = 1; i <= height; i++) {
     for (let j = 1; j <= height - i; j++) {
-      space += " ";
+      space += " "; // printing the space
     }
     for (let k = 0; k < 2 * i - 1; k++) {
       space += "*";

@@ -195,7 +195,7 @@ console.log(isTodayMyBirthday(new Date(2022, 08, 03)));
    Write a function called deleteProp which receives an object and a string as parameters,
    and returns the given object after deleting its property named as the given string.
 */
-
+const deleteProp = function (obj, str) {};
 /* EXERCISE 12
     Write a function called oldestMovie which finds the oldest movie in the provided movies array.
 */
@@ -244,7 +244,18 @@ console.log(isTodayMyBirthday(new Date(2022, 08, 03)));
   **
   ***
 */
-
+let halfTree = function (height) {
+  var line = "";
+  for (var i = 1; i <= height; i++) {
+    for (var j = 1; j <= i; j++) {
+      line += "*";
+    }
+    line += "\n";
+  }
+  return line;
+};
+console.log(halfTree(6));
+// halfTree(6);
 /* EXERCISE 22 
   Create a function called "tree" which receives a number as a parameter and builds an "*" tree with the given height.
   Example: 
@@ -253,11 +264,37 @@ console.log(isTodayMyBirthday(new Date(2022, 08, 03)));
    *** 
   *****
 */
-
+let tree = function (height) {
+  let space = "";
+  for (let i = 1; i <= height; i++) {
+    for (let j = 1; j <= height - i; j++) {
+      space += " ";
+    }
+    for (let k = 0; k < 2 * i - 1; k++) {
+      space += "*";
+    }
+    space += "\n";
+  }
+  return space;
+};
+console.log(tree(6));
 /* EXERCISE 23
   Create a function called "isItPrime" that receives a number as a parameter and returns true if the given number is a prime number.
 */
-
+// sqrt is needed because if a factor is greater than the square root of n,
+// the other factor that would multiply with it to equal n is necessarily less than the square root of n
+function isItPrime(num) {
+  var sqrtNum = Math.floor(Math.sqrt(num));
+  var prime = num != 1;
+  for (var i = 2; i < sqrtNum + 1; i++) {
+    if (num % i == 0) {
+      prime = false;
+      break;
+    }
+  }
+  return prime;
+}
+console.log(isItPrime(23));
 /* WHEN YOU ARE FINISHED
  Commit and push the code to your personal GitHub repository; then post the link of your commit on the Homework section of today's Eduflow.
 */
